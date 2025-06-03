@@ -12,7 +12,7 @@ export class Consts {
     public static readonly CardDescription = 'Hue-like way to control your lights' + (Consts.Dev ? ' [TEST]' : '');
 
     public static readonly HueBorderRadius = 10;
-    public static readonly HueShadow = '0px 2px 3px rgba(0,0,0,0.4)';
+    public static readonly HueShadow = '0px 2px 3px var(--hue-like-light-card-shadow, rgba(0,0,0,0.4))';
     public static readonly LightColor = new Color('#fff');
     public static readonly LightOffColor = new Color('#fff', 0.85);
     public static readonly DarkColor = new Color(0, 0, 0, 0.7);
