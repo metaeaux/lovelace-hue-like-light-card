@@ -175,7 +175,7 @@ export class ViewUtils {
      */
     public static calculateDefaultShadow(element: Element, ctrl: ILightContainer, useOffShadow: boolean): string {
         if (ctrl.isOff())
-            return useOffShadow ? 'inset 0px 0px 10px rgba(0,0,0,0.2)' : '0px 0px 0px white';
+            return useOffShadow ? 'inset 0px 0px 10px color-mix(in srgb, var(--hue-like-light-card-shadow, #000) 20%, transparent)' : '0px 0px 0px white';
 
         const card = element;
         if (!card || !card.clientHeight)
@@ -193,7 +193,7 @@ export class ViewUtils {
             shadowDensity -= (shadowDensity - 0.5) * (darkness - 60) / 40; // shadowDensity: 0.5-0.65
         }
 
-        return `inset 0px -${position}px ${width}px -${spread}px rgba(0,0,0,${shadowDensity})`;
+        return `inset 0px -${position}px ${width}px -${spread}px color-mix(in srgb, var(--hue-like-light-card-shadow, #000) ${shadowDensity*100}%, transparent)`;
     }
 
     /** Will return whether hue custom icons (https://github.com/arallsopp/hass-hue-icons) are installed */
